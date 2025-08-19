@@ -31,6 +31,7 @@
   "heroFaction": "Hero Faction",
   "heroRarity": "Hero Rarity",
   "heroRole": "Hero Role",
+  "aura": "Aura",
   "heroPower": "Hero Power",
   "heroType": "Hero Type",
   "heroImageAlt": "Hero Image",
@@ -43,7 +44,18 @@
     { "heroType": "Hero Type" },
     { "heroRarity": "Hero Rarity" },
     { "heroRole": "Hero Role" }
-  ]
+  ],
+  "pageNotFound": "Page Not Found",
+  "unauthorized": "Unauthorized",
+  "accessDenied": "Access Denied",
+  "oauthSuccess": "OAuth Success",
+  "oauthError": "OAuth Error",
+  "Sorry, we couldn’t find the page you’re looking for.": "Sorry, we couldn’t find the page you’re looking for.",
+  "Go back home": "Go back home",
+  "Back to home": "Back to home",
+  "Contact support": "Contact support",
+  "Support": "Support"
+
 
 
 }

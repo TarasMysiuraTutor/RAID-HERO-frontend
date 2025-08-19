@@ -8,9 +8,9 @@ import {
   SunIcon,
   MoonIcon,
 } from "@heroicons/react/24/outline";
-import { AuthContext } from "../../auth/AuthContext.js";
-import { useLanguage } from "../../context/LanguageContext.js";
-import { useTheme } from "../../context/ThemeContext.js";
+import { AuthContext } from "../auth/AuthContext.js";
+import { useLanguage } from "../context/LanguageContext.js";
+import { useTheme } from "../context/ThemeContext.js";
 
 export default function Navbar() {
   const { t } = useTranslation();

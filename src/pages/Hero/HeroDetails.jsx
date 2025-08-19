@@ -55,7 +55,7 @@ export default function HeroDetails() {
           </ul>
           {heroData.aura && (
             <div className="mt-6 p-3 border rounded-lg dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
-              <h2 className="text-2xl font-semibold">Аура</h2>
+              <h2 className="text-2xl font-semibold">{t("aura")}</h2>
               <p>{heroData.aura}</p>
             </div>
           )}

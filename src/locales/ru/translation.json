@@ -31,6 +31,7 @@
   "heroFaction": "Фракция героя",
   "heroRarity": "Редкость героя",
   "heroRole": "Роль героя",
+  "aura": "Аура",
   "heroPower": "Сила героя",
   "heroType": "Тип героя",
   "heroImageAlt": "Изображение героя",
@@ -43,5 +44,15 @@
     "heroType": "Тип героя",
     "heroRarity": "Редкость героя",
     "heroRole": "Роль героя"
-  }
+  },
+  "pageNotFound": "Страница не найдена",
+  "unauthorized": "Неавторизован",
+  "accessDenied": "Доступ запрещен",
+  "oauthSuccess": "OAuth Успех",
+  "oauthError": "OAuth Ошибка",
+  "Sorry, we couldn’t find the page you’re looking for.": "Извините, мы не смогли найти страницу, которую вы ищете.",
+  "Go back home": "Вернуться на главную",
+  "Back to home": "Назад на главную",
+  "Contact support": "Связаться с поддержкой",
+  "Support": "Поддержка"
 }
