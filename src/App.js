@@ -1,23 +1,19 @@
 import React from "react";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-// import LoginPage from "./pages/LoginPage/LoginPage";
-// import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
 import Navbar from "./components/NavBar/Navbar";
-import ProtectedRoute from "./components/ProtectedRoute";
-import UsersPage from "./pages/UsersPage";
-// import HeroListPage from "./pages/HeroListPage";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import UsersPage from "./pages/UsersPage.jsx";
 import HeroComparePage from "./pages/HeroComparePage";
-import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import ErrorPage from "./pages/ErrorPage.jsx";
 import RoleBasedRoute from "./components/RoleBasedRoute";
 import Unauthorized from "./pages/Unauthorized";
-import AdminPage from "./pages/AdminPage";
-import SuperAdminPage from "./pages/SuperAdminPage";
-import OauthSuccessPage from "./pages/OauthSuccessPage/OauthSuccessPage";
-// import SuperAdminApprovePage from "./pages/SuperAdmin/SuperAdminApprovePage";
-import AdminApprovals from "./pages/SuperAdmin/AdminApprovals";
-import AuthPage from "./pages/AuthPage.jsx"
+import AdminPage from "./pages/AdminPage.jsx";
+import SuperAdminPage from "./pages/SuperAdminPage.jsx";
+import OauthSuccessPage from "./pages/OauthSuccessPage.jsx";
+import AdminApprovals from "./pages/AdminApprovals.jsx";
+import AuthPage from "./pages/AuthPage.jsx";
 import HeroList from "./pages/Hero/HeroList.jsx";
 import HeroDetails from "./pages/Hero/HeroDetails.jsx";
 import { ThemeProvider } from "./context/ThemeContext.js";
@@ -40,7 +36,7 @@ const App = () => {
   };
   return (
     <ThemeProvider>
-      <LanguageProvider >
+      <LanguageProvider>
         <Navbar user={user} onLogout={logout} toggleTheme={toggleTheme} />
 
         <Routes>
@@ -48,10 +44,7 @@ const App = () => {
           <Route path="/hero/:id" element={<HeroDetails lang={lang} />} />
 
           {/* Public */}
-          {/* <Route path="/auth/login" element={<LoginPage />} /> */}
           <Route path="/auth" element={<AuthPage />} />
-          {/* <Route path="/auth/register" element={<RegisterPage />} /> */}
-          {/* <Route path="/superadmin/approve" element={<SuperAdminApprovePage />} /> */}
           <Route path="/superadmin/approvals" element={<AdminApprovals />} />
 
           <Route path="/superadmin" element={<SuperAdminPage />} />
@@ -59,10 +52,7 @@ const App = () => {
           <Route path="/unauthorized" element={<Unauthorized />} />
 
           <Route path="*" element={<ErrorPage />} />
-          {/* <Route path="/heroes" element={<HeroList lang={lang} />} />
-            <Route path="/hero/:id" element={<HeroDetails lang={lang} />} /> */}
 
-          {/* <Route path="/heroes" element={<HeroListPage />} /> */}
           <Route path="/compare" element={<HeroComparePage />} />
           <Route path="/oauth-success" element={<OauthSuccessPage />} />
           {/* Protected for all logged-in users */}
@@ -92,7 +82,6 @@ const App = () => {
           <Route element={<RoleBasedRoute allowedRoles={["superadmin"]} />}>
             <Route path="/superadmin" element={<SuperAdminPage />} />
           </Route>
-          {/* <Route path="/error" element={} /> */}
           {/* Інші маршрути додамо пізніше */}
         </Routes>
       </LanguageProvider>
