@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.auth-page {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  color: #121212;
+}
+
+.auth-page form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.auth-page input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.auth-page button {
+  padding: 0.7rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #ffffff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: all 0.2s ease-in-out;
+}
+
+
+/* From Uiverse.io by prikshit_1236 */ 
+.theme-toggle-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* min-height: 600px; */
+  /* height: 100%; */
+  margin: 0;
+  transition: 0.6s ease-in-out;
+  font-family: "Arial", sans-serif;
+}
+
+.theme-toggle-wrapper .toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
+
+.theme-toggle-wrapper .toggle-switch:hover {
+  transform: scale(1.3);
+}
+
+.theme-toggle-wrapper .toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-toggle-wrapper .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, #f1c40f, #f39c12);
+  transition: 0.4s;
+  border-radius: 17px;
+  box-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+}
+
+.theme-toggle-wrapper .slider:before {
+  position: absolute;
+  content: "☀️";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.theme-toggle-wrapper input:checked + .slider {
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  box-shadow: 0 0 10px rgba(44, 62, 80, 0.5);
+}
+
+.theme-toggle-wrapper input:checked + .slider:before {
+  transform: translateX(15px);
+  content: "🌙";
+}
+
+.theme-toggle-wrapper .clouds {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.theme-toggle-wrapper .cloud {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  fill: rgba(255, 255, 255, 0.8);
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+}
+
+.theme-toggle-wrapper .cloud1 {
+  top: 5px;
+  left: 5px;
+  animation: floatCloud1 8s infinite linear;
+}
+
+.theme-toggle-wrapper .cloud2 {
+  top: 8px;
+  left: 20px;
+  transform: scale(0.8);
+  animation: floatCloud2 12s infinite linear;
+}
+
+@keyframes floatCloud1 {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes floatCloud2 {
+  0% {
+    transform: translateX(-10px) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(40px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.theme-toggle-wrapper input:checked + .slider .cloud {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-wrapper .cloud {
+    animation: none;
+  }
+}
+
