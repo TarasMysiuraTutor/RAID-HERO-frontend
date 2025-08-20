@@ -3,13 +3,15 @@
   "login": "Login",
   "logout": "Logout",
   "theme": "Theme",
-  "user": "User",
   "users": "Users",
+  "user": "User",
+  "userName": "User Name",
+  "userEmail": "User Email",
   "admin": "Admin",
   "superadmin": "Superadmin",
   "profile": "Profile",
   "language": "Language",
-  "page": "Home",
+  "pageHome": "Home",
   "email": "Email",
   "password": "Password",
   "runParser": "Run Parser",
@@ -54,8 +56,9 @@
   "Go back home": "Go back home",
   "Back to home": "Back to home",
   "Contact support": "Contact support",
-  "Support": "Support"
-
-
+  "Support": "Support",
+  "supportMessage": "Сообщение поддержки",
+  "mess1": "Fill out the form and we will contact you shortly",
+  "mess2": ""
 
 }

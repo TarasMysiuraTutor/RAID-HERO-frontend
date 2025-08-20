@@ -6,6 +6,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  console.log("AuthProvider initialized", user);
 
   // Перевіряємо токен при старті
   useEffect(() => {
@@ -13,10 +14,11 @@ export const AuthProvider = ({ children }) => {
       try {
         const token = localStorage.getItem("token");
         if (token) {
-          const res = await axios.get("/auth/me", {
+          const res = await axios.get("/", {
             headers: { Authorization: `Bearer ${token}` },
           });
           setUser(res.data);
+          console.log("User from localStorage:", res.data);
         }
       } catch (err) {
         setUser(null);
@@ -32,6 +34,8 @@ const login = async (credentials) => {
   localStorage.setItem("token", res.data.token);
   localStorage.setItem("user", JSON.stringify(res.data.user)); // ✅
   setUser(res.data.user);
+          console.log("User from localStorage:", res.data);
+
   };
   
  const register = async (data) => {

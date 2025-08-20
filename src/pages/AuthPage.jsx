@@ -4,7 +4,6 @@ import API from "../api/axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../auth/AuthContext.js";
 
-
 export default function AuthPage() {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
@@ -40,11 +39,14 @@ export default function AuthPage() {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("username", res.data.username);
         localStorage.setItem("role", res.data.role);
+        if (res.data.role === "superadmin") navigate("/superadmin");
+        else if (res.data.role === "admin") navigate("/admin");
+        else navigate("/user");
       } else {
         await API.post("/auth/register", formData);
         setSuccess(true);
       }
-      console.log("Form Data:", formData);
+      // console.log("Form Data:", formData);
       setFormData({
         username: "",
         email: "",
@@ -52,9 +54,6 @@ export default function AuthPage() {
         confirmPassword: "",
         role: "user",
       });
-      if (user.role === "superadmin") navigate("/superadmin");
-      else if (user.role === "admin") navigate("/admin");
-      else navigate("/user");
     } catch (err) {
       setError(
         err.response?.data?.message ||

@@ -8,7 +8,7 @@ import {
   SunIcon,
   MoonIcon,
 } from "@heroicons/react/24/outline";
-import { AuthContext } from "../auth/AuthContext.js";
+import { AuthContext, useAuth } from "../auth/AuthContext.js";
 import { useLanguage } from "../context/LanguageContext.js";
 import { useTheme } from "../context/ThemeContext.js";
 
@@ -16,15 +16,14 @@ export default function Navbar() {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // const { user, logout } = useAuth(AuthContext);
   const { user, logout } = useContext(AuthContext);
-  // console.log("User in Navbar:", user);
-  // const { user, logout } = AuthContext();
+  console.log("User in Navbar:", user);
 
-  // const changeLanguage = (lng) => {
-  //   i18n.changeLanguage(lng);
-  // };
-  const { changeLanguage } = useLanguage();
+  const { language, changeLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+
+  console.log("Current theme in Navbar:", user);
 
   return (
     <nav className="bg-gray-800 dark:bg-gray-900 text-white dark:text-gray-200 shadow-lg">
@@ -63,6 +62,7 @@ export default function Navbar() {
             </button>
 
             <select
+              value={language}
               onChange={(e) => changeLanguage(e.target.value)}
               className="bg-gray-700 dark:bg-gray-600 text-white rounded px-2 py-1"
             >
@@ -138,6 +138,7 @@ export default function Navbar() {
           {/* Перемикач мови */}
 
           <select
+            value={language}
             onChange={(e) => changeLanguage(e.target.value)}
             className="bg-gray-600 dark:bg-gray-700 text-white rounded px-2 py-1"
           >

@@ -26,6 +26,7 @@ import { useTranslation } from "react-i18next";
 
 export default function DashboardPage() {
   const { user, logout } = useAuth();
+  console.log("User in DashboardPage:", user);
   const { t } = useTranslation();
 
   const handleParse = async () => {

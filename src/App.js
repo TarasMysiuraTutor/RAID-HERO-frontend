@@ -18,6 +18,7 @@ import HeroList from "./pages/Hero/HeroList.jsx";
 import HeroDetails from "./pages/Hero/HeroDetails.jsx";
 import { ThemeProvider } from "./context/ThemeContext.js";
 import { LanguageProvider } from "./context/LanguageContext.js"; // Додано імпорт LanguageProvider
+import SupportMessagePage from "./pages/supportMessagePage.jsx";
 
 const App = () => {
   const [user, setUser] = useState({ username: "Taras", role: "superadmin" });
@@ -40,6 +41,8 @@ const App = () => {
         <Navbar user={user} onLogout={logout} toggleTheme={toggleTheme} />
 
         <Routes>
+          <Route path="/" element={<DashboardPage lang={lang} />} />
+          
           <Route path="/heroes" element={<HeroList lang={lang} />} />
           <Route path="/hero/:id" element={<HeroDetails lang={lang} />} />
 
@@ -52,6 +55,7 @@ const App = () => {
           <Route path="/unauthorized" element={<Unauthorized />} />
 
           <Route path="*" element={<ErrorPage />} />
+          <Route path="/supportMessage" element={<SupportMessagePage />} />
 
           <Route path="/compare" element={<HeroComparePage />} />
           <Route path="/oauth-success" element={<OauthSuccessPage />} />
@@ -67,9 +71,9 @@ const App = () => {
           <Route
             path="/users"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <UsersPage />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           {/* Admin only */}
